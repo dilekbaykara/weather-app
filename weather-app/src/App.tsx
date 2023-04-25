@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import "./App.css";
 
 function App() {
+  const [weather, setWeather] = useState<any>();
+
+  useEffect(() => {
+    async function load() {
+      const weatherData = await getWeather();
+      setWeather(weatherData);
+      console.log(weatherData);
+    }
+
+    load();
+  }, []);
+  if (!weather) {
+    return <p>loading</p>;
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header className="App-header"></header>
+      <h1>Weather in {weather.location.name}</h1>
+      <h1>Temperature {weather.current.temp_f}&deg;F</h1>
     </div>
   );
+}
+
+async function getWeather() {
+  const response = await fetch(
+    "https://api.weatherapi.com/v1/current.json?key=462eaa5d277d46b0957222907232503&q=London&aqi=no"
+  );
+
+  return response.json();
 }
 
 export default App;
