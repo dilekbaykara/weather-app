@@ -21,6 +21,9 @@ function App() {
       <header className="App-header"></header>
       <h1>Weather in {weather.location.name}</h1>
       <h1>Temperature {weather.current.temp_f}&deg;F</h1>
+      <h1>Feels Like: {weather.current.feelslike_f}&deg;F</h1>
+      <h1>Humidity: {weather.current.humidity}%</h1>
+      <h1>Wind Speed: {weather.current.gust_mph} mph</h1>
     </div>
   );
 }
