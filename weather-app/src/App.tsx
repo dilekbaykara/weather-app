@@ -1,8 +1,14 @@
 import { useEffect, useState } from "react";
+import { ReactComponent as Logo } from "../src/mag-glass.svg";
 import "./App.css";
 
 function App() {
   const [weather, setWeather] = useState<any>();
+  const [query, setQuery] = useState("");
+  const [data, setData] = useState([]);
+
+  // Adding one more state to store cities being searched for
+  const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
     async function load() {
@@ -19,7 +25,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header"></header>
-      <input id="search-bar" type="text"></input>
+      <div id="search-container">
+        <input id="search-bar" type="text" placeholder="Search.."></input>
+        <button>
+          <Logo className="logo" />
+        </button>
+      </div>
       <h1>Weather in {weather.location.name}</h1>
       <h1>Temperature {weather.current.temp_f}&deg;F</h1>
       <h1>Feels Like: {weather.current.feelslike_f}&deg;F</h1>
