@@ -19,6 +19,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header"></header>
+      <input id="search-bar" type="text"></input>
       <h1>Weather in {weather.location.name}</h1>
       <h1>Temperature {weather.current.temp_f}&deg;F</h1>
       <h1>Feels Like: {weather.current.feelslike_f}&deg;F</h1>

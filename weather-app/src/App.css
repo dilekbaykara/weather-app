@@ -4,9 +4,22 @@
 
 body {
   background-color: rgb(135, 135, 135);
+  text-align: center;
 }
 
 h1 {
   font-family: "obviously-variable", sans-serif;
   font-variation-settings: "ital" 0, "wdth" 150, "wght" 200;
+}
+
+#search-bar {
+  display: flex;
+  background-color: aliceblue;
+  width: 15rem;
+  border-radius: 15px;
+  height: 2rem;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem;
 }
