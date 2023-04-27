@@ -12,14 +12,26 @@ h1 {
   font-variation-settings: "ital" 0, "wdth" 150, "wght" 200;
 }
 
-#search-bar {
+#search-container {
   display: flex;
-  background-color: aliceblue;
-  width: 15rem;
-  border-radius: 15px;
-  height: 2rem;
+  background-color: rgb(255, 255, 255);
+  width: 85%;
+  border-radius: 10px;
+  border: none;
+  height: 2.5rem;
+  padding: 0 15px;
+  box-shadow: 0px 0px 8px rgb(61, 61, 61);
   align-content: center;
   justify-content: center;
   align-items: center;
   margin: 3rem;
+}
+
+input {
+  background-color: transparent;
+  border: none;
+  height: 100%;
+  font-size: 1.25rem;
+  width: 100%;
+  margin-left: 5px;
 }
