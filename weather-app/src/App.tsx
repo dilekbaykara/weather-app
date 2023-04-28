@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { ReactComponent as Logo } from "../src/mag-glass.svg";
 import "./App.css";
-import { AiOutlineSearch } from "react-icons/ai";
+
+import Inputs from "./components/Inputs";
 
 function App() {
   const [weather, setWeather] = useState<any>();
@@ -26,12 +27,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header"></header>
-      <div id="search-container">
-        <AiOutlineSearch />
-        <input id="search-bar" type="text" placeholder="Search.."></input>
-      </div>
+      <Inputs />
       <h1>Weather in {weather.location.name}</h1>
-      <h1>Temperature {weather.current.temp_f}&deg;F</h1>
+      <h1 id="temp-display">{weather.current.temp_f}&deg;F</h1>
       <h1>Feels Like: {weather.current.feelslike_f}&deg;F</h1>
       <h1>Humidity: {weather.current.humidity}%</h1>
       <h1>Wind Speed: {weather.current.gust_mph} mph</h1>
