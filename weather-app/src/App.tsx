@@ -3,6 +3,8 @@ import { ReactComponent as Logo } from "../src/mag-glass.svg";
 import "./App.css";
 
 import Inputs from "./components/Inputs";
+import TemperatureAndDetails from "./components/TemperatureAndDetails";
+import TimeAndLocation from "./components/TimeAndLocation";
 
 function App() {
   const [weather, setWeather] = useState<any>();
@@ -28,8 +30,10 @@ function App() {
     <div className="App">
       <header className="App-header"></header>
       <Inputs />
+      <TimeAndLocation />
       <h1>Weather in {weather.location.name}</h1>
       <h1 id="temp-display">{weather.current.temp_f}&deg;F</h1>
+      <TemperatureAndDetails />
       <h1>Feels Like: {weather.current.feelslike_f}&deg;F</h1>
       <h1>Humidity: {weather.current.humidity}%</h1>
       <h1>Wind Speed: {weather.current.gust_mph} mph</h1>
