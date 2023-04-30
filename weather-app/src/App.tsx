@@ -8,7 +8,7 @@ import TimeAndLocation from "./components/TimeAndLocation";
 
 function App() {
   const [weather, setWeather] = useState<any>();
-  const [query, setQuery] = useState("");
+  // const [query, setQuery] = useState("");
   const [data, setData] = useState([]);
 
   // Adding one more state to store cities being searched for
@@ -41,13 +41,19 @@ function App() {
         <p>Humidity: {weather.current.humidity}%</p>
         <p>Wind Speed: {weather.current.gust_mph} mph</p>
       </div>
+      <div id="hourly-forecast">
+        <p>Hourly Forecast Placeholder</p>
+      </div>
+      <div id="daily-forecast">
+        <p>Daily Forecast Placeholder</p>
+      </div>
     </div>
   );
 }
 
 async function getWeather() {
   const response = await fetch(
-    "https://api.weatherapi.com/v1/current.json?key=462eaa5d277d46b0957222907232503&q=London&aqi=no"
+    "https://api.weatherapi.com/v1/current.json?key=462eaa5d277d46b0957222907232503&q=Istanbul&aqi=no"
   );
 
   return response.json();

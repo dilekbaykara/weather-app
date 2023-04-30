@@ -12,7 +12,6 @@
 }
 
 body {
-  background-color: rgb(135, 135, 135);
   text-align: center;
 }
 
@@ -50,6 +49,10 @@ input {
   color: #ffff;
 }
 
+input::placeholder {
+  color: #ffff;
+}
+
 input:focus {
   outline: none;
 }
@@ -79,9 +82,16 @@ input:focus {
   font-size: 5rem;
 }
 
-.temperature {
+#temperature {
+  color: #ffff;
   display: flex;
   flex-direction: row;
+}
+
+#gr-location {
+  color: #ffff;
+  all: unset;
+  cursor: pointer;
 }
 
 #fahrenheit-button {
@@ -128,4 +138,48 @@ input:focus {
   font-family: "obviously-variable", sans-serif;
   font-variation-settings: "ital" 0, "wdth" 150, "wght" 300;
   font-size: 1.5rem;
+}
+
+#daily-forecast {
+  color: #ffff;
+  font-family: "obviously-variable", sans-serif;
+  font-variation-settings: "ital" 0, "wdth" 150, "wght" 350;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(40px);
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.172);
+  background-repeat: no-repeat;
+  margin: 15px;
+  width: 30rem;
+  height: 10rem;
+  gap: 15px;
+  border-radius: 15px;
+
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+#hourly-forecast {
+  color: #ffff;
+  font-family: "obviously-variable", sans-serif;
+  font-variation-settings: "ital" 0, "wdth" 150, "wght" 350;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(40px);
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.172);
+  background-repeat: no-repeat;
+  margin: 15px;
+  width: 30rem;
+  height: 10rem;
+  gap: 15px;
+  border-radius: 15px;
+
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }

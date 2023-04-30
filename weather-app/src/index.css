@@ -6,20 +6,16 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* Warm weather gradient */
-  /* background: rgb(255, 114, 56);
+  /* background: rgb(255, 74, 0);
   background: linear-gradient(
     90deg,
-    rgba(255, 114, 56, 1) 0%,
-    rgba(252, 246, 189, 1) 100%
+    rgba(255, 74, 0, 1) 0%,
+    rgba(255, 202, 8, 1) 100%
   ); */
 
   /* Cool color gradient */
   background: rgb(0, 44, 84);
-  background: linear-gradient(
-    90deg,
-    rgba(0, 44, 84, 1) 0%,
-    rgba(14, 121, 178, 1) 100%
-  );
+  background: linear-gradient(45deg, rgb(0, 28, 54) 0%, rgb(0, 166, 255) 100%);
 }
 
 code {
