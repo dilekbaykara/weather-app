@@ -30,13 +30,17 @@ function App() {
     <div className="App">
       <header className="App-header"></header>
       <Inputs />
-      <TimeAndLocation />
-      <h1>Weather in {weather.location.name}</h1>
-      <h1 id="temp-display">{weather.current.temp_f}&deg;F</h1>
-      <TemperatureAndDetails />
-      <h1>Feels Like: {weather.current.feelslike_f}&deg;F</h1>
-      <h1>Humidity: {weather.current.humidity}%</h1>
-      <h1>Wind Speed: {weather.current.gust_mph} mph</h1>
+      <div id="temp-display-div">
+        <TimeAndLocation />
+        <h1>{weather.location.name}</h1>
+        <h1 id="temp-display">{weather.current.temp_f}&deg;F</h1>
+        <TemperatureAndDetails />
+      </div>
+      <div id="feels-like-div">
+        <p>Feels Like: {weather.current.feelslike_f}&deg;F</p>
+        <p>Humidity: {weather.current.humidity}%</p>
+        <p>Wind Speed: {weather.current.gust_mph} mph</p>
+      </div>
     </div>
   );
 }

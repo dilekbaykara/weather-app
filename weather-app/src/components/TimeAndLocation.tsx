@@ -2,8 +2,8 @@ import React from "react";
 
 function TimeAndLocation() {
   return (
-    <div>
-      <div className="time-and-location"></div>
+    <div id="time-and-location">
+      <div></div>
       Local Date Placeholder | Local Time Placeholder
     </div>
   );

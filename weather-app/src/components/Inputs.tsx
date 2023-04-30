@@ -29,7 +29,9 @@ function Inputs() {
           type="text"
           placeholder="Search.."
           value={weather?.location?.name}
-          onChange={(e) => setWeather(e.currentTarget.value)}
+          onChange={(e) =>
+            setWeather(<p> Showing weather for: {weather?.location?.name} </p>)
+          }
         ></input>
         <GrLocation />
         <div className="temperature">

@@ -1,13 +1,3 @@
-/* .App {
-  background: rgb(238, 174, 202);
-  background: radial-gradient(
-    circle,
-    rgba(238, 174, 202, 1) 0%,
-    rgba(148, 187, 233, 1) 100%
-  );
-  background-repeat: no-repeat;
-} */
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -15,41 +5,24 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Warm weather gradient */
+  /* background: rgb(255, 114, 56);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 114, 56, 1) 0%,
+    rgba(252, 246, 189, 1) 100%
+  ); */
+
+  /* Cool color gradient */
+  background: rgb(0, 44, 84);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 44, 84, 1) 0%,
+    rgba(14, 121, 178, 1) 100%
+  );
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-
-.logo {
-  height: 1rem;
-  width: 1rem;
-}
-
-#search-container {
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-}
-
-#temp-display {
-  font-size: 5rem;
-}
-
-.temperature {
-  display: flex;
-  flex-direction: row;
-}
-
-#fahrenheit-button {
-  all: unset;
-  cursor: pointer;
-}
-
-#celcius-button {
-  all: unset;
-  cursor: pointer;
 }
