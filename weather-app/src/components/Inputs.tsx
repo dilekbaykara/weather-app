@@ -2,9 +2,13 @@ import React, { useEffect, useState } from "react";
 import { GrLocation } from "react-icons/gr";
 import { AiOutlineSearch } from "react-icons/ai";
 
-function Inputs() {
-  const [weather, setWeather] = useState<any>();
-  const [searchedCity, setSearchedCity] = useState("London");
+function Inputs(props: {
+  setSearchedCity(city: string): void;
+  searchedCity: string;
+  setWeather(data: any): void;
+  temperatureUnit: string;
+  setTemperatureUnit(unit: "f" | "c"): void;
+}) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [input, setInput] = useState("");
 
@@ -18,13 +22,13 @@ function Inputs() {
     };
 
     fetch(
-      `https://api.weatherapi.com/v1/current.json?key=462eaa5d277d46b0957222907232503&q=${searchedCity}&aqi=no`,
+      `https://api.weatherapi.com/v1/current.json?key=462eaa5d277d46b0957222907232503&q=${props.searchedCity}&aqi=no`,
       options
     )
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        setWeather(data);
+        props.setWeather(data);
         setIsLoaded(true);
       })
       .catch((err) => console.error(err));
@@ -32,11 +36,11 @@ function Inputs() {
 
   useEffect(() => {
     searchWeather();
-  }, [searchedCity]);
+  }, [props.searchedCity]);
 
   function handleSubmit(e: { preventDefault: () => void }) {
     e.preventDefault();
-    setSearchedCity(input);
+    props.setSearchedCity(input);
     console.log(input);
   }
 
@@ -55,13 +59,13 @@ function Inputs() {
 
         <div id="temperature">
           <button id="gr-location">
-            <GrLocation />
+            <GrLocation color="#ffffff" />
           </button>
           <button
             name="metric"
             id="fahrenheit-button"
             onClick={(e) => {
-              console.log(weather.current.temp_f);
+              props.setTemperatureUnit("f");
             }}
           >
             &deg;F
@@ -71,7 +75,7 @@ function Inputs() {
             name="imperial"
             id="celcius-button"
             onClick={(e) => {
-              console.log(weather.current.temp_c);
+              props.setTemperatureUnit("c");
             }}
           >
             &deg;C
