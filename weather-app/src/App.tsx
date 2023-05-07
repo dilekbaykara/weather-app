@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { ReactComponent as Logo } from "../src/mag-glass.svg";
 import "./App.css";
 
+import Forecast from "./components/Forecast";
 import Inputs from "./components/Inputs";
 import TemperatureAndDetails from "./components/TemperatureAndDetails";
 import TimeAndLocation from "./components/TimeAndLocation";
@@ -38,7 +39,11 @@ function App() {
             <p>Hourly Forecast Placeholder</p>
           </div>
           <div id="daily-forecast">
-            <p>Daily Forecast Placeholder</p>
+            <Forecast
+              searchedCity={searchedCity}
+              setWeather={setWeather}
+              weather={weather}
+            />
           </div>
         </>
       ) : (

@@ -68,11 +68,12 @@ input:focus {
   margin: 15px;
   color: #ffff;
   height: 20rem;
-  gap: 25px;
+  gap: 15px;
   border-radius: 15px;
   align-content: center;
   justify-content: center;
   align-items: center;
+  padding: 15px;
 }
 
 .logo {
