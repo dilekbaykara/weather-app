@@ -1,7 +1,7 @@
 import { Hourglass } from "lucide-react";
 import React, { useEffect, useState } from "react";
 
-function Forecast(props: {
+function HourlyForecast(props: {
   weather: any;
   searchedCity: string;
   setWeather(data: any): void;
@@ -38,20 +38,22 @@ function Forecast(props: {
   if (!getForecast) return <h3>Loading...</h3>;
 
   return (
-    <div>
-      5 Day Forecast
-      <hr></hr>
-      <p>{props.weather.forecast}</p>
+    <div className="bar-grid-container">
+      <div className="hourly-title">
+        Hourly Forecast
+        <br></br>
+      </div>
       <p>
         {getForecast.forecast.forecastday.map((day: any) => (
-          <span className="bar-grid" style={{ margin: "0 2px" }}>
+          <span style={{ margin: "0 2px" }}>
             {day.hour.map((hour: any) => (
               <div
+                className="bar-grid"
                 style={{
                   display: "inline-block",
                   height: hour.temp_f + "px",
                   width: "4px",
-                  backgroundColor: "white",
+                  backgroundColor: "transparent",
                 }}
               ></div>
             ))}
@@ -63,4 +65,4 @@ function Forecast(props: {
   );
 }
 
-export default Forecast;
+export default HourlyForecast;

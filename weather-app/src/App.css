@@ -21,6 +21,19 @@ h1 {
   font-variation-settings: "ital" 0, "wdth" 150, "wght" 200;
 }
 
+.bar-grid {
+  border-top: solid;
+}
+
+.bar-grid-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.hourly-title {
+  margin-bottom: 2rem;
+}
+
 #search-container {
   display: flex;
   background: rgba(255, 255, 255, 0.1);

@@ -3,6 +3,7 @@ import { ReactComponent as Logo } from "../src/mag-glass.svg";
 import "./App.css";
 
 import Forecast from "./components/Forecast";
+import HourlyForecast from "./components/HourlyForecast";
 import Inputs from "./components/Inputs";
 import TemperatureAndDetails from "./components/TemperatureAndDetails";
 import TimeAndLocation from "./components/TimeAndLocation";
@@ -36,7 +37,11 @@ function App() {
             <p>Wind Speed: {weather.current.gust_mph} mph</p>
           </div>
           <div id="hourly-forecast">
-            <p>Hourly Forecast Placeholder</p>
+            <HourlyForecast
+              searchedCity={searchedCity}
+              setWeather={setWeather}
+              weather={weather}
+            />
           </div>
           <div id="daily-forecast">
             <Forecast
