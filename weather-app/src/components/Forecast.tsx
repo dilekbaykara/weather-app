@@ -39,26 +39,45 @@ function Forecast(props: {
 
   return (
     <div>
-      5 Day Forecast
-      <hr></hr>
-      <p>{props.weather.forecast}</p>
-      <p>
-        {getForecast.forecast.forecastday.map((day: any) => (
-          <span className="bar-grid" style={{ margin: "0 2px" }}>
-            {day.hour.map((hour: any) => (
-              <div
-                style={{
-                  display: "inline-block",
-                  height: hour.temp_f + "px",
-                  width: "4px",
-                  backgroundColor: "white",
-                }}
-              ></div>
-            ))}
-          </span>
-        ))}
-      </p>
-      {/* {props.weather.forecast.map} */}
+      <div className="forecast-title">3 Day Forecast</div>
+      <div className="forecast-days">
+        <div id="day-0-temps">
+          <img
+            src={getForecast.forecast.forecastday[0].day.condition.icon}
+            alt=""
+          />
+          <br></br>
+          {getForecast.forecast.forecastday[0].day.condition.text}
+          <br></br>
+          High: {getForecast.forecast.forecastday[0].day.maxtemp_f}&deg;F
+          <br></br>
+          Low: {getForecast.forecast.forecastday[0].day.mintemp_f}&deg;F
+        </div>
+        <div id="day-1-temps">
+          <img
+            src={getForecast.forecast.forecastday[1].day.condition.icon}
+            alt=""
+          />
+          <br></br>
+          {getForecast.forecast.forecastday[1].day.condition.text}
+          <br></br>
+          High: {getForecast.forecast.forecastday[1].day.maxtemp_f}&deg;F
+          <br></br>
+          Low: {getForecast.forecast.forecastday[1].day.mintemp_f}&deg;F
+        </div>
+        <div id="day-2-temps">
+          <img
+            src={getForecast.forecast.forecastday[2].day.condition.icon}
+            alt=""
+          />
+          <br></br>
+          {getForecast.forecast.forecastday[2].day.condition.text}
+          <br></br>
+          High: {getForecast.forecast.forecastday[2].day.maxtemp_f}&deg;F
+          <br></br>
+          Low: {getForecast.forecast.forecastday[2].day.mintemp_f}&deg;F
+        </div>
+      </div>
     </div>
   );
 }

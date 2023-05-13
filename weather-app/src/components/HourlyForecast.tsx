@@ -39,27 +39,49 @@ function HourlyForecast(props: {
 
   return (
     <div className="bar-grid-container">
-      <div className="hourly-title">
+      <div id="hourly-title">
         Hourly Forecast
         <br></br>
       </div>
-      <p>
-        {getForecast.forecast.forecastday.map((day: any) => (
-          <span style={{ margin: "0 2px" }}>
-            {day.hour.map((hour: any) => (
-              <div
-                className="bar-grid"
-                style={{
-                  display: "inline-block",
-                  height: hour.temp_f + "px",
-                  width: "4px",
-                  backgroundColor: "transparent",
-                }}
-              ></div>
-            ))}
-          </span>
-        ))}
-      </p>
+      <div id="temp-grid-box">
+        <div id="temperature-f-div">
+          <div id="temperature-f">
+            <p>90&deg;F</p>
+            <p>80&deg;F</p>
+            <p>70&deg;F</p>
+            <p>60&deg;F</p>
+            <p>50&deg;F</p>
+            <p>40&deg;F</p>
+            <p>30&deg;F</p>
+            <p>20&deg;F</p>
+            <p>10&deg;F</p>
+            <p>0&deg;F</p>
+          </div>
+        </div>
+        <div className="bar-grid-border">
+          {console.log(getForecast.forecast.forecastday[0])}
+
+          {getForecast.forecast.forecastday[0].hour.map((hour: any) => (
+            <div
+              className="bar-grid"
+              style={{
+                display: "inline-block",
+                height: hour.temp_f + "px",
+                width: "18px",
+                backgroundColor: "transparent",
+              }}
+            ></div>
+          ))}
+
+          <div></div>
+        </div>
+      </div>
+      <div className="hours">
+        <p>12AM</p>
+        <p>6AM</p>
+        <p>12PM</p>
+        <p>6PM</p>
+      </div>
       {/* {props.weather.forecast.map} */}
     </div>
   );
