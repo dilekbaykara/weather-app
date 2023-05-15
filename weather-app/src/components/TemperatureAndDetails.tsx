@@ -8,7 +8,9 @@ function TemperatureAndDetails(props: {
   return (
     <div id="temp-display-div">
       {/* <TimeAndLocation /> */}
-      <p>Local Time: {props.weather.current.condition.last_updated}</p>
+      <div id="time-display">
+        <p>Local Time: {props.weather.current.last_updated}</p>
+      </div>
       <p>
         <img src={props.weather.current.condition.icon} alt="" />
       </p>

@@ -14,7 +14,7 @@ function Forecast(props: {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Host": "weatherapi.com.p.rapidapi.com",
+        "X-RapidAPI-Host": "weatherapi.com",
         "X-RapidAPI-Key": "462eaa5d277d46b0957222907232503",
       },
     };

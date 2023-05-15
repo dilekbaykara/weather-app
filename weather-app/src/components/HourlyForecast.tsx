@@ -36,7 +36,14 @@ function HourlyForecast(props: {
   }, [props.searchedCity]);
 
   if (!getForecast) return <h3>Loading...</h3>;
+  const hourlyForecastPoints = getForecast.forecast.forecastday[0].hour
+    .map(
+      (hour: any, index: number) =>
+        `${(index * 350) / 24},${((90 - hour.temp_f) * 160) / 90}`
+    )
+    .join(" ");
 
+  console.log(hourlyForecastPoints);
   return (
     <div className="bar-grid-container">
       <div id="hourly-title">
@@ -59,9 +66,19 @@ function HourlyForecast(props: {
           </div>
         </div>
         <div className="bar-grid-border">
-          {console.log(getForecast.forecast.forecastday[0])}
-
-          {getForecast.forecast.forecastday[0].hour.map((hour: any) => (
+          <svg
+            viewBox="0 0 350 160"
+            className="view-box"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <polyline
+              fill="none"
+              stroke="#ccc"
+              strokeWidth="2"
+              points={hourlyForecastPoints}
+            />
+          </svg>
+          {/* {getForecast.forecast.forecastday[0].hour.map((hour: any) => (
             <div
               className="bar-grid"
               style={{
@@ -71,7 +88,7 @@ function HourlyForecast(props: {
                 backgroundColor: "transparent",
               }}
             ></div>
-          ))}
+          ))} */}
 
           <div></div>
         </div>
