@@ -46,7 +46,6 @@ h1 {
   font-family: "obviously-variable", sans-serif;
   font-size: 1.5rem;
   font-variation-settings: "ital" 0, "wdth" 150, "wght" 400;
-  margin-top: 1rem;
 }
 
 #temp-grid-box {
@@ -233,6 +232,7 @@ input:focus {
   align-content: center;
   justify-content: center;
   align-items: center;
+  padding: 20px;
 }
 
 #daily-forecast {

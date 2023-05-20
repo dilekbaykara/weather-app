@@ -20,8 +20,6 @@ function Inputs(props: {
         "X-RapidAPI-Host": "weatherapi.com.p.rapidapi.com",
         "X-RapidAPI-Key": "462eaa5d277d46b0957222907232503",
       },
-      "X-RapidAPI-Host": "openweathermap.org.p.rapidapi.com",
-      "X-RapidAPI-Key": "2e484d828f340f63965c78ca54c9b2a3",
     };
 
     fetch(
@@ -35,6 +33,20 @@ function Inputs(props: {
         setIsLoaded(true);
       })
       .catch((err) => console.error(err));
+  };
+
+  useEffect(() => {
+    searchWeather();
+  }, [props.searchedCity]);
+
+  const setForecast = () => {
+    const options = {
+      method: "GET",
+      headers: {
+        "X-RapidAPI-Host": "api.openweathermap.org",
+        "X-RapidAPI-Key": "2e484d828f340f63965c78ca54c9b2a3",
+      },
+    };
 
     fetch(
       `https://api.openweathermap.org/data/2.5/forecast?q=${props.searchedCity}&appid=2e484d828f340f63965c78ca54c9b2a3`,
@@ -42,7 +54,7 @@ function Inputs(props: {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        console.log(data, "bye");
         props.setWeather(data);
         setIsLoaded(true);
       })
@@ -50,7 +62,7 @@ function Inputs(props: {
   };
 
   useEffect(() => {
-    searchWeather();
+    setForecast();
   }, [props.searchedCity]);
 
   function handleSubmit(e: { preventDefault: () => void }) {
