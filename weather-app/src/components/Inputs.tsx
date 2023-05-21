@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { GrLocation } from "react-icons/gr";
 import { AiOutlineSearch } from "react-icons/ai";
+import GeoLocation from "./GeoLocation";
 
 function Inputs(props: {
   setSearchedCity(city: string): void;
@@ -85,9 +85,10 @@ function Inputs(props: {
         </form>
 
         <div id="temperature">
-          <button id="gr-location">
+          {/* <button id="gr-location">
             <GrLocation color="#ffffff" />
-          </button>
+          </button> */}
+          <GeoLocation />
           <button
             name="metric"
             id="fahrenheit-button"
