@@ -73,7 +73,7 @@ function HourlyForecast(props: {
           >
             <polyline
               fill="none"
-              stroke="#ccc"
+              stroke="#ffff"
               strokeWidth="2"
               points={hourlyForecastPoints}
             />
