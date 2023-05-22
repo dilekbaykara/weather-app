@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { GrLocation } from "react-icons/gr";
 
 function GeoLocation() {
-  const [status, setStatus] = useState(null);
+  // const [status, setStatus] = useState(null);
 
   function success(pos: { coords: any }) {
     const crd = pos.coords;
@@ -19,28 +19,29 @@ function GeoLocation() {
 
   navigator.geolocation.getCurrentPosition(success, error);
 
-  const getLocation = () => {
-    if (!navigator.geolocation) {
-      return "Geolocation is not supported by your browser";
-    } else {
-      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-      ("Locating...");
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          setStatus(null);
-        },
-        () => {
-          return "Unable to retrieve your location";
-        }
-      );
-    }
-  };
+  // const getLocation = () => {
+  //   if (!navigator.geolocation) {
+  //     return "Geolocation is not supported by your browser";
+  //   } else {
+  //     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+  //     ("Locating...");
+
+  //     navigator.geolocation.getCurrentPosition(
+  //       (position) => {
+  //         setStatus(null);
+  //       },
+  //       () => {
+  //         return "Unable to retrieve your location";
+  //       }
+  //     );
+  //   }
+  // };
 
   return (
     <div>
-      <button id="gr-location" onClick={getLocation}>
+      <button id="gr-location" onClick={GeoLocation}>
         <GrLocation color="#ffffff" />
-        {status}
+        {/* {status} */}
       </button>
     </div>
   );
