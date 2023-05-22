@@ -9,7 +9,6 @@ function HourlyForecast(props: {
 }) {
   const [getForecast, setGetForecast] = useState<any>();
 
-  const forecastDays = {};
   const searchWeather = () => {
     const options = {
       method: "GET",
