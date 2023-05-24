@@ -28,7 +28,6 @@ function Inputs(props: {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         props.setWeather(data);
         setIsLoaded(true);
       })
@@ -54,7 +53,6 @@ function Inputs(props: {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data, "bye");
         props.setWeather(data);
         setIsLoaded(true);
       })
@@ -68,7 +66,7 @@ function Inputs(props: {
   function handleSubmit(e: { preventDefault: () => void }) {
     e.preventDefault();
     props.setSearchedCity(input);
-    console.log(input);
+    // console.log(input);
   }
 
   if (!isLoaded) return <h3>Loading...</h3>;

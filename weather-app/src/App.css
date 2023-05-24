@@ -267,9 +267,7 @@ input:focus {
 }
 
 .forecast-days {
-  display: grid;
-  grid-template-columns: 3;
-  grid-template-rows: 1;
+  display: flex;
   gap: 1rem;
 }
 

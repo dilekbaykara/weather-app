@@ -16,7 +16,7 @@ function Forecast(props: {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data, "yooooo");
+        // console.log(data, "yooooo");
         setGetForecast(data);
         // props.setIsLoaded(true);
       })
@@ -41,9 +41,18 @@ function Forecast(props: {
     var dayNum = new Date(temp.dt * 1000).getDay();
     var result = days[dayNum];
     console.log(temp, result);
+
     return (
       <div>
-        {result} {Math.floor((temp.main.temp - 273) * (9 / 5) + 32)}
+        <img
+          src={`https://openweathermap.org/img/wn/${temp.weather[0].icon}.png`}
+          alt="img"
+        />
+        {result} <br></br> {Math.floor((temp.main.temp - 273) * (9 / 5) + 32)}
+        &deg;F
+        <br></br>
+        {temp.weather[0].main}
+        <br></br>
       </div>
     );
   };
@@ -56,9 +65,14 @@ function Forecast(props: {
   if (!getForecast) return <h3>Loading...</h3>;
   return (
     <div>
-      {getForecast.list
-        .filter((forecastItem: any) => forecastItem.dt_txt.endsWith("12:00:00"))
-        .map((forecastItem: any) => weekdayResult(forecastItem))}
+      <div className="forecast-title">5 Day Forecast</div>
+      <div className="forecast-days">
+        {getForecast.list
+          .filter((forecastItem: any) =>
+            forecastItem.dt_txt.endsWith("12:00:00")
+          )
+          .map((forecastItem: any) => weekdayResult(forecastItem))}
+      </div>
     </div>
   );
 }

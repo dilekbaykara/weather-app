@@ -24,7 +24,7 @@ function HourlyForecast(props: {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data, "hi");
+        // console.log(data, "hi");
         setGetForecast(data);
         // props.setIsLoaded(true);
       })
@@ -42,7 +42,7 @@ function HourlyForecast(props: {
     )
     .join(" ");
 
-  console.log(hourlyForecastPoints);
+  // console.log(hourlyForecastPoints);
   return (
     <div className="bar-grid-container">
       <div id="hourly-title">
