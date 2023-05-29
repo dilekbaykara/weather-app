@@ -42,10 +42,9 @@ function Forecast(props: {
     ];
     var dayNum = new Date(temp.dt * 1000).getDay();
     var result = days[dayNum];
-    console.log(temp, result);
     if (props.temperatureUnit === "f")
       return (
-        <div>
+        <div key={result}>
           <img
             src={`https://openweathermap.org/img/wn/${temp.weather[0].icon}.png`}
             alt="img"
@@ -59,7 +58,7 @@ function Forecast(props: {
       );
     else
       return (
-        <div>
+        <div key={result}>
           <img
             src={`https://openweathermap.org/img/wn/${temp.weather[0].icon}.png`}
             alt="img"

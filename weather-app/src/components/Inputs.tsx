@@ -11,7 +11,6 @@ function Inputs(props: {
 }) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [input, setInput] = useState("");
-  const [forecastDays, setForecastDays] = useState(false);
 
   const searchWeather = () => {
     const options = {
@@ -39,31 +38,6 @@ function Inputs(props: {
     searchWeather();
   }, [props.searchedCity]);
 
-  const setForecast = () => {
-    const options = {
-      method: "GET",
-      headers: {
-        "X-RapidAPI-Host": "api.openweathermap.org",
-        "X-RapidAPI-Key": "2e484d828f340f63965c78ca54c9b2a3",
-      },
-    };
-
-    fetch(
-      `https://api.openweathermap.org/data/2.5/forecast?q=${props.searchedCity}&appid=2e484d828f340f63965c78ca54c9b2a3`,
-      options
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        props.setWeather(data);
-        setIsLoaded(true);
-      })
-      .catch((err) => console.error(err));
-  };
-
-  useEffect(() => {
-    setForecast();
-  }, [props.searchedCity]);
-
   function handleSubmit(e: { preventDefault: () => void }) {
     e.preventDefault();
     props.setSearchedCity(input);
@@ -80,6 +54,7 @@ function Inputs(props: {
           <input
             placeholder="Search.."
             onChange={(e) => setInput(e.target.value)}
+            value={input}
           ></input>
         </form>
 
@@ -87,7 +62,13 @@ function Inputs(props: {
           {/* <button id="gr-location">
             <GrLocation color="#ffffff" />
           </button> */}
-          <GeoLocation />
+          <GeoLocation
+            onLocationFound={function (location: string): void {
+              console.log(location);
+              props.setSearchedCity(location);
+              setInput(location);
+            }}
+          />
           <button
             name="metric"
             id="fahrenheit-button"

@@ -140,6 +140,19 @@ input:focus {
   outline: none;
 }
 
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  animation: rotate 5s linear infinite;
+}
+
 #time-display {
   color: #ffff;
   font-family: "obviously-variable", sans-serif;
@@ -154,7 +167,7 @@ input:focus {
   backdrop-filter: blur(40px);
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.172);
   background-repeat: no-repeat;
-  width: 34rem;
+  width: 40rem;
   margin: 15px;
   color: #ffff;
   height: 20rem;
@@ -179,6 +192,7 @@ input:focus {
   color: #ffff;
   display: flex;
   flex-direction: row;
+  gap: 2px;
 }
 
 #gr-location {
@@ -209,7 +223,8 @@ input:focus {
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.172);
   background-repeat: no-repeat;
   margin: 15px;
-  width: 35rem;
+  width: 40rem;
+  padding: 10px;
   height: 10rem;
   gap: 15px;
   border-radius: 15px;
@@ -245,7 +260,7 @@ input:focus {
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.172);
   background-repeat: no-repeat;
   margin: 15px;
-  width: 35rem;
+  width: 40rem;
   /* gap: 15px; */
   border-radius: 15px;
   align-content: center;
@@ -266,7 +281,7 @@ input:focus {
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.172);
   background-repeat: no-repeat;
   margin: 15px;
-  width: 35rem;
+  width: 40rem;
   height: 20rem;
   /* gap: 15px; */
   border-radius: 15px;
