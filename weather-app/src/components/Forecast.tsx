@@ -6,6 +6,8 @@ function Forecast(props: {
   weather: any;
   searchedCity: string;
   setWeather(data: any): void;
+  temperatureUnit: string;
+  setTemperatureUnit(unit: "f" | "c"): void;
   // setIsLoaded: void;
 }) {
   const [getForecast, setGetForecast] = useState<any>();
@@ -41,20 +43,34 @@ function Forecast(props: {
     var dayNum = new Date(temp.dt * 1000).getDay();
     var result = days[dayNum];
     console.log(temp, result);
-
-    return (
-      <div>
-        <img
-          src={`https://openweathermap.org/img/wn/${temp.weather[0].icon}.png`}
-          alt="img"
-        />
-        {result} <br></br> {Math.floor((temp.main.temp - 273) * (9 / 5) + 32)}
-        &deg;F
-        <br></br>
-        {temp.weather[0].main}
-        <br></br>
-      </div>
-    );
+    if (props.temperatureUnit === "f")
+      return (
+        <div>
+          <img
+            src={`https://openweathermap.org/img/wn/${temp.weather[0].icon}.png`}
+            alt="img"
+          />
+          {result} <br></br> {Math.floor((temp.main.temp - 273) * (9 / 5) + 32)}
+          &deg;F
+          <br></br>
+          {temp.weather[0].main}
+          <br></br>
+        </div>
+      );
+    else
+      return (
+        <div>
+          <img
+            src={`https://openweathermap.org/img/wn/${temp.weather[0].icon}.png`}
+            alt="img"
+          />
+          {result} <br></br> {Math.floor(temp.main.temp - 273)}
+          &deg;C
+          <br></br>
+          {temp.weather[0].main}
+          <br></br>
+        </div>
+      );
   };
 
   useEffect(() => {

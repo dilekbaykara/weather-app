@@ -30,6 +30,7 @@ function Inputs(props: {
       .then((data) => {
         props.setWeather(data);
         setIsLoaded(true);
+        console.log(data);
       })
       .catch((err) => console.error(err));
   };

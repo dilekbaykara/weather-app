@@ -32,15 +32,27 @@ function App() {
           />
 
           <div id="feels-like-div">
-            <p>Feels Like: {weather.current.feelslike_f}&deg;F</p>
-            <p>Humidity: {weather.current.humidity}%</p>
-            <p>Wind Speed: {weather.current.gust_mph} mph</p>
+            {temperatureUnit === "f" ? (
+              <>
+                <p>Feels Like: {weather.current.feelslike_f}&deg;F</p>
+                <p>Humidity: {weather.current.humidity}%</p>
+                <p>Wind Speed: {weather.current.gust_mph} mph</p>
+              </>
+            ) : (
+              <>
+                <p>Feels Like: {weather.current.feelslike_c}&deg;C</p>
+                <p>Humidity: {weather.current.humidity}%</p>
+                <p>Wind Speed: {weather.current.gust_mph} mph</p>
+              </>
+            )}
           </div>
           <div id="hourly-forecast">
             <HourlyForecast
+              temperatureUnit={temperatureUnit}
               searchedCity={searchedCity}
               setWeather={setWeather}
               weather={weather}
+              setTemperatureUnit={setTemperatureUnit}
             />
           </div>
           <div id="daily-forecast">
@@ -48,6 +60,8 @@ function App() {
               searchedCity={searchedCity}
               setWeather={setWeather}
               weather={weather}
+              temperatureUnit={temperatureUnit}
+              setTemperatureUnit={setTemperatureUnit}
             />
           </div>
         </>

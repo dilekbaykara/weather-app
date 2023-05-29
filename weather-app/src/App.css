@@ -69,7 +69,26 @@ h1 {
   font-size: 12px;
   margin-right: 4px;
   height: 10rem;
-  gap: 5.5px;
+  gap: 6.5px;
+  padding-bottom: 0.5rem;
+}
+
+#temperature-c-div {
+  border-right: 2px solid #ffff;
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  height: 10.9rem;
+}
+
+#temperature-c {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 12px;
+  margin-right: 4px;
+  height: 10rem;
+  gap: 6.5px;
   padding-bottom: 0.5rem;
 }
 
