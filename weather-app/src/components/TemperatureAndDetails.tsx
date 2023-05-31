@@ -1,4 +1,5 @@
 import React from "react";
+import UpdatedTime from "./UpdatedTime";
 // import TimeAndLocation from "./TimeAndLocation";
 
 function TemperatureAndDetails(props: {
@@ -8,12 +9,7 @@ function TemperatureAndDetails(props: {
   return (
     <div id="temp-display-div">
       {/* <TimeAndLocation /> */}
-      <div id="time-display">
-        <p>
-          Local Time:{" "}
-          {props.weather.current.last_updated.toLocaleString(`en-US`)}
-        </p>
-      </div>
+
       <p>
         <img src={props.weather.current.condition.icon} alt="" />
       </p>

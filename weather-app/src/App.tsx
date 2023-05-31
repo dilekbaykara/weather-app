@@ -7,6 +7,7 @@ import HourlyForecast from "./components/HourlyForecast";
 import Inputs from "./components/Inputs";
 import TemperatureAndDetails from "./components/TemperatureAndDetails";
 import TimeAndLocation from "./components/TimeAndLocation";
+import UpdatedTime from "./components/UpdatedTime";
 
 function App() {
   const [weather, setWeather] = useState<any>();
@@ -26,11 +27,11 @@ function App() {
 
       {weather ? (
         <>
+          <UpdatedTime weather={weather} />
           <TemperatureAndDetails
             weather={weather}
             temperatureUnit={temperatureUnit}
           />
-
           <div id="feels-like-div">
             {temperatureUnit === "f" ? (
               <>
