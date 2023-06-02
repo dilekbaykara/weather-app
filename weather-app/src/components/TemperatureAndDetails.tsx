@@ -1,6 +1,5 @@
 import React from "react";
 import UpdatedTime from "./UpdatedTime";
-// import TimeAndLocation from "./TimeAndLocation";
 
 function TemperatureAndDetails(props: {
   weather: any;
@@ -8,8 +7,6 @@ function TemperatureAndDetails(props: {
 }) {
   return (
     <div id="temp-display-div">
-      {/* <TimeAndLocation /> */}
-
       <p>
         <img src={props.weather.current.condition.icon} alt="" />
       </p>

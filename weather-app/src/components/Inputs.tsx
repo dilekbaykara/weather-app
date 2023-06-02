@@ -41,7 +41,6 @@ function Inputs(props: {
   function handleSubmit(e: { preventDefault: () => void }) {
     e.preventDefault();
     props.setSearchedCity(input);
-    // console.log(input);
   }
 
   if (!isLoaded) return <h3>Loading...</h3>;
@@ -59,9 +58,6 @@ function Inputs(props: {
         </form>
 
         <div id="temperature">
-          {/* <button id="gr-location">
-            <GrLocation color="#ffffff" />
-          </button> */}
           <GeoLocation
             onLocationFound={function (location: string): void {
               console.log(location);

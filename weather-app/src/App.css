@@ -122,6 +122,17 @@ h1 {
   color: #ffff;
 }
 
+footer {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2rem;
+  color: #ffff;
+  font-family: "obviously-variable", sans-serif;
+  font-variation-settings: "ital" 0, "wdth" 150, "wght" 400;
+  font-size: 1rem;
+  align-items: flex-end;
+}
+
 input {
   background-color: transparent;
   border: none;
@@ -177,6 +188,16 @@ input:focus {
   justify-content: center;
   align-items: center;
   padding: 10px;
+}
+
+.svg-icon {
+  height: 25px;
+  color: #ffff;
+  margin-left: 7px;
+}
+
+.svg-icon:hover {
+  opacity: 0.9;
 }
 
 .logo {

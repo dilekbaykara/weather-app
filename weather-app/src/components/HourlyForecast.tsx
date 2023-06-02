@@ -7,7 +7,6 @@ function HourlyForecast(props: {
   setWeather(data: any): void;
   temperatureUnit: string;
   setTemperatureUnit(unit: "f" | "c"): void;
-  // setIsLoaded: void;
 }) {
   const [getForecast, setGetForecast] = useState<any>();
 
@@ -26,9 +25,7 @@ function HourlyForecast(props: {
     )
       .then((response) => response.json())
       .then((data) => {
-        // console.log(data, "hi");
         setGetForecast(data);
-        // props.setIsLoaded(true);
       })
       .catch((err) => console.error(err));
   };
@@ -44,8 +41,6 @@ function HourlyForecast(props: {
         `${(index * 350) / 24},${((90 - hour.temp_f) * 160) / 90}`
     )
     .join(" ");
-
-  // console.log(hourlyForecastPoints);
 
   if (props.temperatureUnit === "f")
     return (

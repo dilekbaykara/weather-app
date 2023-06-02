@@ -8,7 +8,6 @@ function Forecast(props: {
   setWeather(data: any): void;
   temperatureUnit: string;
   setTemperatureUnit(unit: "f" | "c"): void;
-  // setIsLoaded: void;
 }) {
   const [getForecast, setGetForecast] = useState<any>();
 
@@ -18,17 +17,10 @@ function Forecast(props: {
     )
       .then((response) => response.json())
       .then((data) => {
-        // console.log(data, "yooooo");
         setGetForecast(data);
-        // props.setIsLoaded(true);
       })
       .catch((err) => console.error(err));
   };
-
-  // const tempUnit = (kelvin: number) => {
-  //   temp.main.temp
-
-  // };
 
   const weekdayResult = (temp: any) => {
     var days = [
@@ -91,49 +83,5 @@ function Forecast(props: {
     </div>
   );
 }
-//   return (
-//     <div>
-//       <div className="forecast-title">3 Day Forecast</div>
-//       <div className="forecast-days">
-//         <div id="day-0-temps">
-//           <img
-//             src={getForecast.forecast.forecastday[0].day.condition.icon}
-//             alt=""
-//           />
-//           <br></br>
-//           {getForecast.forecast.forecastday[0].day.condition.text}
-//           <br></br>
-//           High: {getForecast.forecast.forecastday[0].day.maxtemp_f}&deg;F
-//           <br></br>
-//           Low: {getForecast.forecast.forecastday[0].day.mintemp_f}&deg;F
-//         </div>
-//         <div id="day-1-temps">
-//           <img
-//             src={getForecast.forecast.forecastday[1].day.condition.icon}
-//             alt=""
-//           />
-//           <br></br>
-//           {getForecast.forecast.forecastday[1].day.condition.text}
-//           <br></br>
-//           High: {getForecast.forecast.forecastday[1].day.maxtemp_f}&deg;F
-//           <br></br>
-//           Low: {getForecast.forecast.forecastday[1].day.mintemp_f}&deg;F
-//         </div>
-//         <div id="day-2-temps">
-//           <img
-//             src={getForecast.forecast.forecastday[2].day.condition.icon}
-//             alt=""
-//           />
-//           <br></br>
-//           {getForecast.forecast.forecastday[2].day.condition.text}
-//           <br></br>
-//           High: {getForecast.forecast.forecastday[2].day.maxtemp_f}&deg;F
-//           <br></br>
-//           Low: {getForecast.forecast.forecastday[2].day.mintemp_f}&deg;F
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
 
 export default Forecast;

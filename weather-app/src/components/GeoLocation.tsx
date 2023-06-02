@@ -5,7 +5,6 @@ interface GeolocationProps {
 }
 
 function GeoLocation(props: GeolocationProps) {
-  // const [status, setStatus] = useState(null);
   const [loading, setLoading] = useState(false);
 
   async function success(pos: { coords: any }) {
@@ -17,11 +16,6 @@ function GeoLocation(props: GeolocationProps) {
     );
     const data = await response.json();
     props.onLocationFound(data[0].local_names.en);
-    // console.log(data[0].local_names.en);
-    // console.log("Your current position is:");
-    // console.log(`Latitude : ${crd.latitude}`);
-    // console.log(`Longitude: ${crd.longitude}`);
-    // console.log(`More or less ${crd.accuracy} meters.`);
     setLoading(false);
   }
 
