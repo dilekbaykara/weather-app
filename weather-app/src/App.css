@@ -151,19 +151,6 @@ input:focus {
   outline: none;
 }
 
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.spinner {
-  animation: rotate 5s linear infinite;
-}
-
 #time-display {
   color: #ffff;
   font-family: "obviously-variable", sans-serif;
@@ -190,6 +177,14 @@ input:focus {
   padding: 10px;
 }
 
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .svg-icon {
   height: 25px;
   color: #ffff;
@@ -197,7 +192,7 @@ input:focus {
 }
 
 .svg-icon:hover {
-  opacity: 0.9;
+  animation: spin 0.8s;
 }
 
 .logo {
