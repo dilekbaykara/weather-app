@@ -43,7 +43,7 @@ function Inputs(props: {
     props.setSearchedCity(input);
   }
 
-  if (!isLoaded) return <h3>Loading...</h3>;
+  if (!isLoaded) return <h3 className="loading">Loading...</h3>;
 
   return (
     <div>

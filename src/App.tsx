@@ -83,7 +83,7 @@ function App() {
           </footer>
         </>
       ) : (
-        <p>loading..</p>
+        <p className="loading">Loading..</p>
       )}
     </div>
   );
